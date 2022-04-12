@@ -1,0 +1,23 @@
+{
+  "name": "quest5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "rimraf mochawesome-report cypress/results mochawesome.json && cypress run",
+    "generateReport": "npx mochawesome-merge 'cypress/results/*.json' > mochawesome.json && npx marge mochawesome.json",
+    "cy:run:report" : "npm run cy:run && npm run generateReport"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.5.4",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2"
+  }
+}

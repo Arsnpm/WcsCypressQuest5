@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-12T09:00:09.012Z",
+    "end": "2022-04-12T09:00:09.625Z",
+    "duration": 613,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8b7eb1ab-ac15-4f63-8bb9-0fdcce2d4514",
+      "title": "",
+      "fullFile": "cypress/integration/api-tastedive-1.spec.js",
+      "file": "cypress/integration/api-tastedive-1.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b9b647fc-3ca5-4c57-9b99-3a44ef2f1dc7",
+          "title": "Given TasteDive API testing",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "3833ae38-b74a-4a93-b45f-b02c989fa64c",
+              "title": "When a user send GET request to tastedive api/similar without parameters",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "then it should get tastedive query without parameters and print response",
+                  "fullTitle": "Given TasteDive API testing When a user send GET request to tastedive api/similar without parameters then it should get tastedive query without parameters and print response",
+                  "timedOut": null,
+                  "duration": 547,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "//using custom command getTastediveRecommendation\ncy.getTastediveRecommendation().then(response => {\n  //print response\n  cy.log(JSON.stringify(response));\n  console.log(JSON.stringify(response)); //expect code 200\n  expect(response.status).to.eq(200); //expect property Similar\n  expect(response.body).to.have.property('Similar'); //expect 0 as results lenght \n  expect(response.body.Similar.Results.length).to.be.eq(0); //expect empty name as results\n  expect(response.body.Similar.Info[0].Name).to.be.eq(\"\");\n});",
+                  "err": {},
+                  "uuid": "d5d536f0-1b63-400c-b2ca-d90fa946a0f1",
+                  "parentUUID": "3833ae38-b74a-4a93-b45f-b02c989fa64c",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d5d536f0-1b63-400c-b2ca-d90fa946a0f1"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 547,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
